@@ -6,7 +6,7 @@ $(function(){
 				document.getElementById('here').innerHTML = this.responseText;
 			}
 		};
-		xhttp.open("GET","description.html",true);
+		xhttp.open("GET","remains.txt",true);
 		xhttp.send();
 	})
 })

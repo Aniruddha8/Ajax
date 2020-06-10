@@ -4,10 +4,21 @@
 	<title>Let's Practice</title>
 </head>
 <body>
-	<button value="click me!" type="button">Click me!</button>
+	<button value="click me!" type="button" onclick="load()">Click me!</button>
 	<div id="here">
 	</div>
-	<script type="text/javascript" src="gava.js"></script>
+	<script>
+		function laod(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechnage = function(){
+				if(this.readyState == 4 && this.status == 200){
+				document.getElementById('here').innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET","remains.txt",true);
+			xhttp.send();
+		}
+	</script>
 
 </body>
 </html>

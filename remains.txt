@@ -1,0 +1,19 @@
+$('li').on('click',function(){
+		var check = $(this).hasClass('favourite');
+		if (check == true){
+			$(this).animate{
+				opacity : 0.0;
+				paddingLeft: '+=180'; 
+			},200,'swing',function(){	
+				item = $(this).text();
+				$(this).remove();
+				$('ul').append('<li class="\ favourite ">' + item + '</li>').hide().fadeIn(300);
+				updateCount();
+			};
+		};else{
+			item = $(this).text();
+			$(this).remove();
+			$('ul').prepend('<li class="\ favourite ">' + item + '</li>').hide().fadeIn(300);
+			updateCount();
+		};
+	});
